@@ -73,6 +73,6 @@ public final class Account implements Comparable<Account> {
 
         if (this.balance - other.balance == 0)
             return EQUAL;
-        return (this.balance - other.balance > 0) ? AFTER : BEFORE;
+        return (this.balance - other.balance < 0) ? AFTER : BEFORE;
     }
 }
