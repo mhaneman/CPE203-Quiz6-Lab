@@ -66,10 +66,10 @@ public final class Account implements Comparable<Account> {
             return ((this.isNewAccount) ? 1 : 0) - ((other.isNewAccount) ? 1 : 0);
 
         if (this.lastName.compareTo(other.firstName) != 0)
-            return this.lastName.compareTo(other.firstName);
+            return other.lastName.compareTo(this.firstName);
 
         if (this.firstName.compareTo(other.firstName) != 0)
-            return this.firstName.compareTo(other.firstName);
+            return other.firstName.compareTo(this.firstName);
 
         if (this.balance - other.balance == 0)
             return EQUAL;
