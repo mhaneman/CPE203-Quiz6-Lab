@@ -75,8 +75,4 @@ public final class Account implements Comparable<Account> {
             return EQUAL;
         return (this.balance - other.balance > 0) ? AFTER : BEFORE;
     }
-
-    public String toString() {
-        return "<--" + firstName + "-->";
-    }
 }
