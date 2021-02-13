@@ -77,6 +77,6 @@ public final class Account implements Comparable<Account> {
     }
 
     public String toString() {
-        return Integer.toString(accountNumber);
+        return lastName + " " + firstName;
     }
 }
