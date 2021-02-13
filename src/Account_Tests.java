@@ -64,12 +64,12 @@ public class Account_Tests
 //    }
 
     @Test(timeout=1000)
-    public void test_sort_all_me_naturalOrder()
+    public void test_sort_me_all_naturalOrder()
     {
         setup_list();
-        Collections.sort(all);
+        Collections.sort(me_all);
         List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me);
-        assertEquals(all,expectedResult);
+        assertEquals(me_all,expectedResult);
     }
 
     @Test(timeout=1000)
