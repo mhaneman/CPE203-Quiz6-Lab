@@ -17,8 +17,8 @@ public class Account_Tests
     private static Account flaubert6 = new Account("Gustave", "Flaubert", 1003, 0, false);
     private static Account flaubert7 = new Account("Gustave", "Flaubert", 1003, 0, true);
 
-
     private static List<Account> me_all = new ArrayList<>();
+    private static Account[] me_some = new Account[3];
     private static Account me1 = new Account("Gustave", "Flaubert", 1000, 10000, true);
     private static Account me2 = new Account("Guy", "Flaubert", 1002, 0, true);
     private static Account me3 = new Account("Gustave", "de Maupassant", 1004, 0, true);
@@ -27,8 +27,7 @@ public class Account_Tests
     private static Account me6 = new Account("Gustave", "Flaubert", 10010, 0, false);
     private static Account me7 = new Account("Gustave", "Flaubert", 10012, 0, true);
 
-
-  private static void setup_array(){
+    private static void setup_array(){
       some[0]=flaubert;
       some[1]=flaubert7;
       some[2]=flaubert4;
@@ -44,15 +43,21 @@ public class Account_Tests
         all.add(flaubert6);
         all.add(flaubert7);
     }
+
     private static void setup_meList(){
-        all.clear();
-        all.add(me1);
-        all.add(me2);
-        all.add(me3);
-        all.add(me4);
-        all.add(me5);
-        all.add(me6);
-        all.add(me7);
+        me_all.clear();
+        me_all.add(me1);
+        me_all.add(me2);
+        me_all.add(me3);
+        me_all.add(me4);
+        me_all.add(me5);
+        me_all.add(me6);
+        me_all.add(me7);
+    }
+    private static void setup_meArray(){
+        some[0]=flaubert;
+        some[1]=flaubert7;
+        some[2]=flaubert4;
     }
 
     @Test(timeout=1000)
@@ -69,7 +74,7 @@ public class Account_Tests
     {
         setup_meList();
         Collections.sort(me_all);
-        List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me1);
+        List<Account> expectedResult = Arrays.asList(me1, me2, me3, me4, me5, me6, me7);
         assertEquals(me_all, expectedResult);
     }
 
