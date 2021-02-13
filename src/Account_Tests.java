@@ -68,7 +68,7 @@ public class Account_Tests
     {
         setup_list();
         Collections.sort(all);
-        List<Account> expectedResult = Arrays.asList(me, me2, me3, me4, me5, me6, me7);
+        List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me);
         assertEquals(all,expectedResult);
     }
 
