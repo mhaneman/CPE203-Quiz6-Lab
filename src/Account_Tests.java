@@ -66,7 +66,7 @@ public class Account_Tests
     @Test(timeout=1000)
     public void test_sort_me_all_naturalOrder()
     {
-        setup_list();
+        setup_meList();
         Collections.sort(me_all);
         List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me);
         assertEquals(me_all,expectedResult);
