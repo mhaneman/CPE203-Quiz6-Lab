@@ -19,7 +19,7 @@ public class Account_Tests
 
 
     private static List<Account> me_all = new ArrayList<>();
-    private static Account me = new Account("Gustave", "Flaubert", 1000, 10000, true);
+    private static Account me1 = new Account("Gustave", "Flaubert", 1000, 10000, true);
     private static Account me2 = new Account("Guy", "Flaubert", 1002, 0, true);
     private static Account me3 = new Account("Gustave", "de Maupassant", 1004, 0, true);
     private static Account me4 = new Account("Gustave", "Flaubert", 1006, 500000, true);
@@ -33,6 +33,7 @@ public class Account_Tests
       some[1]=flaubert7;
       some[2]=flaubert4;
      }
+
     private static void setup_list(){
         all.clear();
         all.add(flaubert);
@@ -45,7 +46,7 @@ public class Account_Tests
     }
     private static void setup_meList(){
         all.clear();
-        all.add(me);
+        all.add(me1);
         all.add(me2);
         all.add(me3);
         all.add(me4);
@@ -54,22 +55,22 @@ public class Account_Tests
         all.add(me7);
     }
 
-//    @Test(timeout=1000)
-//    public void test_sort_all_naturalOrder()
-//    {
-//        setup_list();
-//       Collections.sort(all);
-//       List<Account> expectedResult = Arrays.asList(flaubert6,flaubert7,flaubert5,flaubert,flaubert2,flaubert3,flaubert4);
-//       assertEquals(all,expectedResult);
-//    }
+    @Test(timeout=1000)
+    public void test_sort_all_naturalOrder()
+    {
+        setup_list();
+       Collections.sort(all);
+       List<Account> expectedResult = Arrays.asList(flaubert6,flaubert7,flaubert5,flaubert,flaubert2,flaubert3,flaubert4);
+       assertEquals(all,expectedResult);
+    }
 
     @Test(timeout=1000)
     public void test_sort_me_all_naturalOrder()
     {
         setup_meList();
         Collections.sort(me_all);
-        List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me);
-        assertEquals(me_all,expectedResult);
+        List<Account> expectedResult = Arrays.asList(me7, me6, me5, me4, me3, me2, me1);
+        assertEquals(me_all, expectedResult);
     }
 
     @Test(timeout=1000)
